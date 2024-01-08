@@ -28,7 +28,7 @@ def speak(content):
         pygame.mixer.quit()
         pygame.quit()
 
-    audio_bytes = data  # Replace with actual audio bytes
+    audio_bytes = data  
     play_audio_from_bytes(audio_bytes)
 
 
