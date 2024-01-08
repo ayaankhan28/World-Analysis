@@ -1,17 +1,16 @@
 import speech_recognition as sr
 
 def recognize_speech():
-    recognizer = sr.Recognizer()#Creates a speech recognition object.
+    recognizer = sr.Recognizer()
 
-    with sr.Microphone() as source:# Opens a microphone as a source for audio input.
+    with sr.Microphone() as source:
         print("Say something:")
-        #recognizer.adjust_for_ambient_noise(source)  # Adjust for ambient noise
-        sr.pause_threshold = 1#pause
-        audio = recognizer.listen(source)#captures audio
+  
+        sr.pause_threshold = 1
+        audio = recognizer.listen(source)
 
     try:
-        text = recognizer.recognize_google(audio, language='en-in')#converts
-
+        text = recognizer.recognize_google(audio, language='en-in')
         return (text)
     except sr.UnknownValueError:
         return ("skipped")
